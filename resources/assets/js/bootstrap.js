@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-moment.updateLocale('en', {
+moment.updateLocale('de', {
     calendar: {
         lastDay: '[Yesterday]',
         sameDay: '[Today]',

@@ -11,6 +11,7 @@ import Music from './components/Music';
 import Npm from './components/Npm';
 import Packagist from './components/Packagist';
 import Tasks from './components/Tasks';
+import Todoist from './components/Todoist';
 import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
@@ -27,6 +28,7 @@ new Vue({
         Npm,
         Packagist,
         Tasks,
+        Todoist,
         TimeWeather,
         Twitter,
         Uptime,

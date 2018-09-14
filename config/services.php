@@ -17,4 +17,8 @@ return [
     'packagist' => [
         'vendor' => env('PACKAGIST_VENDOR'),
     ],
+
+    'todoist' => [
+        'api_key' => env('TODOIST_TOKEN'),
+    ]
 ];

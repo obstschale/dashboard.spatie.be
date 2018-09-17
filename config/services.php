@@ -19,6 +19,7 @@ return [
     ],
 
     'todoist' => [
-        'api_key' => env('TODOIST_TOKEN'),
+        'api_keys' => explode(',', env('TODOIST_TOKEN')),
+        'users' => explode(',', env('TODOIST_User')),
     ]
 ];

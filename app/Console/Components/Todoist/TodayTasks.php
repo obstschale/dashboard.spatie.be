@@ -18,18 +18,19 @@ class TodayTasks extends Command
 
     public function handle(GitHubApi $gitHub)
     {
-        $apiKey = config('services.todoist.api_key');
+        $apiKeys = config('services.todoist.api_keys');
+        $users = config('services.todoist.users');
 
         $client = new Client([
             'base_uri' => 'https://beta.todoist.com/API/v8/',
             'headers'  => [
-                'Authorization' => "Bearer {$apiKey}",
+                'Authorization' => "Bearer {$apiKeys[0]}",
                 'Accept'        => 'application/json'
             ]
         ]);
 
-        $tasks = $client->get('tasks');
-        $tasks = collect(json_decode($tasks->getBody()))
+        $tasksHH = $client->get('tasks');
+        $tasksHH = collect(json_decode($tasksHH->getBody()))
             ->filter(function ($task) {
                 return ! $task->completed;
             })
@@ -44,6 +45,34 @@ class TodayTasks extends Command
             ->sortBy('priority')
             ->toArray();
 
-         event(new TodayTasksFetched($tasks));
+        // Almut
+
+        $client = new Client([
+            'base_uri' => 'https://beta.todoist.com/API/v8/',
+            'headers'  => [
+                'Authorization' => "Bearer {$apiKeys[1]}",
+                'Accept'        => 'application/json'
+            ]
+        ]);
+
+        $tasksAlmut = $client->get('tasks');
+        $tasksAlmut = collect(json_decode($tasksAlmut->getBody()))
+            ->filter(function ($task) {
+                return ! $task->completed;
+            })
+            ->filter(function ($task) {
+                if (isset($task->project_id)) {
+                    return $task->project_id === 2181086582;
+                }
+
+                return false;
+            })
+            ->sortBy('priority')
+            ->toArray();
+
+         event(new TodayTasksFetched([
+             'hans-helge' => $tasksHH,
+             'almut' => $tasksAlmut
+         ]));
     }
 }

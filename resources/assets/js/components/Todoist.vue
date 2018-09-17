@@ -35,7 +35,7 @@
             getEventHandlers() {
                 return {
                     'Todoist.TodayTasksFetched': response => {
-                        this.tasks = response.tasks;
+                        this.tasks = response.tasks[this.teamMember];
                     },
                 };
             },

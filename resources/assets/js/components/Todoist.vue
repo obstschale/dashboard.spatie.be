@@ -4,6 +4,7 @@
             <h1 class="github-file__title">{{ teamMember }}</h1>
             <ul>
                 <li v-for="task in tasks">
+                    <priority-circle :priority="task.priority"></priority-circle>
                     {{ task.content }}
                 </li>
             </ul>
@@ -14,11 +15,13 @@
 <script>
     import echo from '../mixins/echo';
     import Tile from './atoms/Tile';
+    import PriorityCircle from './atoms/PriorityCircle';
     import saveState from 'vue-save-state';
 
     export default {
         components: {
             Tile,
+            PriorityCircle,
         },
 
         mixins: [echo, saveState],

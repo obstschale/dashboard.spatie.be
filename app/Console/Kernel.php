@@ -23,6 +23,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Components\Twitter\ListenForMentions::class,
         \App\Console\Components\Twitter\SendFakeTweet::class,
         \App\Console\Components\Todoist\TodayTasks::class,
+        \App\Console\Components\Losung\FetchLosung::class,
         UpdateDashboard::class,
     ];
 
@@ -35,5 +36,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('dashboard:fetch-github-totals')->everyThirtyMinutes();
         $schedule->command('dashboard:fetch-packagist-totals')->hourly();
         $schedule->command('dashboard:fetch-npm-totals')->hourly();
+        $schedule->command('dashboard:fetch-losung')->everyMinute();
     }
 }

@@ -12,6 +12,7 @@
     <tasks team-member="Fahrplan" position="d1"></tasks>
     <music position="b2:c2"></music>
     <uptime position="c3"></uptime>
+    <losung position="b3:c4"></losung>
     <internet-connection></internet-connection>
 </dashboard>
 

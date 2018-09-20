@@ -15,6 +15,7 @@ import Todoist from './components/Todoist';
 import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
+import Losung from './components/Losung';
 
 new Vue({
     el: '#dashboard',
@@ -32,6 +33,7 @@ new Vue({
         TimeWeather,
         Twitter,
         Uptime,
+        Losung,
     },
 
     created() {

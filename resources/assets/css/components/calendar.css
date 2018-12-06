@@ -11,5 +11,6 @@
 }
 
 .calendar__event__date {
+    font-size: var(--font-size-xxs);
     color: var(--red-light);
 }

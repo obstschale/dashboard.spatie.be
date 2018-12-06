@@ -5,7 +5,7 @@
             <ul class="calendar__events">
                 <li v-for="event in events" class="calendar__event">
                     <h2 class="calendar__event__title">{{ event.name }}</h2>
-                    <div class="calendar__event__date">{{ relativeDate(event.date) }}</div>
+                    <div class="calendar__event__date">{{ formatDate(event.startdate, event.enddate) }}</div>
                 </li>
             </ul>
         </section>
@@ -17,6 +17,7 @@ import echo from '../mixins/echo';
 import Tile from './atoms/Tile';
 import saveState from 'vue-save-state';
 import { relativeDate } from '../helpers';
+import moment from 'moment';
 
 export default {
     components: {
@@ -35,6 +36,26 @@ export default {
 
     methods: {
         relativeDate,
+
+        formatDate(start, end) {
+            const startDate = moment(start);
+            const endDate = moment(end);
+
+            if (moment().isSame(startDate, 'd') ||
+                moment().isBetween(startDate, endDate)) {
+                return 'Heute';
+            }
+
+            if (moment().add(1, 'day').isSame(startDate, 'd')) {
+                return 'Morgen';
+            }
+
+            if (startDate.isBetween(moment().add(1, 'day'), moment().add(8, 'days'), 'day')) {
+                return startDate.fromNow();
+            }
+
+            return startDate.format('D. MMM') + ' bis ' + endDate.format('D. MMM');
+        },
 
         getEventHandlers() {
             return {

@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('dashboard:fetch-calendar-events')->everyMinute();
+        $schedule->command('dashboard:fetch-calendar-events')->everyTenMinutes();
         $schedule->command('dashboard:fetch-current-track')->everyMinute();
         $schedule->command('dashboard:send-heartbeat')->everyMinute();
         $schedule->command('dashboard:today-tasks')->everyFiveMinutes();

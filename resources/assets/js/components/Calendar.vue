@@ -54,6 +54,10 @@ export default {
                 return startDate.fromNow();
             }
 
+            if (startDate.isSame(endDate, 'd')) {
+                return startDate.format('D. MMM');
+            }
+
             return startDate.format('D. MMM') + ' bis ' + endDate.format('D. MMM');
         },
 

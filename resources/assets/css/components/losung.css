@@ -6,4 +6,5 @@
 
 .losung-file__content {
     font-size: var(--font-size-s);
+    margin: 1vw;
 }

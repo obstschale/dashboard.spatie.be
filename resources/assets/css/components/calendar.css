@@ -1,3 +1,9 @@
+.calendar__title {
+    color: var(--blue-light);
+    text-transform: uppercase;
+    font-size: var(--font-size-m);
+}
+
 .calendar__events {
     font-size: var(--font-size-s);
 }

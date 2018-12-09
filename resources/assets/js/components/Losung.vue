@@ -1,7 +1,7 @@
 <template>
     <tile :position="position" modifiers="overflow">
-        <section class="github-file">
-            <h1 class="github-file__title">Losung <span v-if="losung.Sonntag">({{ losung.Sonntag }})</span></h1>
+        <section class="losung-file">
+            <h1 class="losung-file__title">Losung <span v-if="losung.Sonntag">({{ losung.Sonntag }})</span></h1>
 
             <section class="losung-body">
                 <span class="losung-item">

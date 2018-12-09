@@ -8,9 +8,9 @@
     <todoist team-member="almut" position="a1:a2"></todoist>
     <todoist team-member="hans-helge" position="a3:a4"></todoist>
     <calendar position="d2:d4"></calendar>
-    <time-weather position="b1" time-format="HH:mm:ss" date-format="ddd DD. MMMM" time-zone="Europe/Berlin" weather-city="Augsburg"></time-weather>
+    <time-weather position="b2:c2" time-format="HH:mm:ss" date-format="ddd DD. MMMM" time-zone="Europe/Berlin" weather-city="Augsburg"></time-weather>
     <tasks team-member="Fahrplan" position="d1"></tasks>
-    <music position="b2:c2"></music>
+    <music position="b1:c1"></music>
     <uptime position="c3"></uptime>
     <losung position="b3:c4"></losung>
     <internet-connection></internet-connection>

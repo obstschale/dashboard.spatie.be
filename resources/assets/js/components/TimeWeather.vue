@@ -9,9 +9,9 @@
                     <span class="time-weather__weather__description">
                         <i class="wi" :class="weather.iconClass"></i>
                     </span>
+                    <span class="time-weather__time-zone">{{ weatherCity }}</span>
                 </span>
             </time>
-            <span class="time-weather__time-zone">{{ weatherCity }}</span>
         </section>
     </tile>
 </template>

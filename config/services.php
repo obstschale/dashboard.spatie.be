@@ -21,5 +21,10 @@ return [
     'todoist' => [
         'api_keys' => explode(',', env('TODOIST_TOKEN')),
         'users' => explode(',', env('TODOIST_User')),
+    ],
+
+    'open-weather-map' => [
+        'api_key' => env('OPEN_WEATHER_MAP_API_KEY'),
     ]
+
 ];

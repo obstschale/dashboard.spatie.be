@@ -1,16 +1,14 @@
 import axios from 'axios';
 
 class Weather {
-    async conditions(city) {
-        const query = `select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='${city}') and u='c'`;
+    async conditions(city, apiKey) {
+        const response = await this.performQuery(city, apiKey);
 
-        const response = await this.performQuery(query);
-
-        return response.data.query.results.channel.item.condition;
+        return response.data;
     }
 
-    async performQuery(query) {
-        const endpoint = `https://query.yahooapis.com/v1/public/yql?q=${query}&format=json`;
+    async performQuery(city, apiKey) {
+        const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`;
 
         return await axios.get(endpoint);
     }

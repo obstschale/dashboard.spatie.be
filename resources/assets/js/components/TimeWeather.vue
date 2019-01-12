@@ -44,6 +44,9 @@ export default {
         position: {
             type: String,
         },
+        apiKey: {
+            type: String,
+        }
     },
 
     data() {
@@ -76,10 +79,10 @@ export default {
         },
 
         async fetchWeather() {
-            const conditions = await weather.conditions(this.weatherCity);
+            const conditions = await weather.conditions(this.weatherCity, this.apiKey);
 
-            this.weather.temperature = conditions.temp;
-            this.weather.iconClass = `wi-yahoo-${conditions.code}`;
+            this.weather.temperature = Math.round(conditions.main.temp);
+            this.weather.iconClass = `wi-owm-${conditions.weather[0].id}`;
         },
     },
 };

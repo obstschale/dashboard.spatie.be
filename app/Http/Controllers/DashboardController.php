@@ -17,6 +17,8 @@ class DashboardController extends Controller
             'initialTweets' => TweetHistory::all(),
 
             'usingNodeServer' => usingNodeServer(),
+
+            'openWeatherMapApiKey' => config('services.open-weather-map.api_key'),
         ]);
     }
 }

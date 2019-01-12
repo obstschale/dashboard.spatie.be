@@ -72,6 +72,9 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "deploy": [
+            "vendor/bin/dep deploy --ansi production"
         ]
     },
     "config": {

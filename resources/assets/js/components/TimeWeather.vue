@@ -43,9 +43,6 @@ export default {
         },
         position: {
             type: String,
-        },
-        apiKey: {
-            type: String,
         }
     },
 
@@ -57,6 +54,7 @@ export default {
                 temperature: '',
                 iconClass: '',
             },
+            apiKey: window.dashboard.openWeatherMapApiKey
         };
     },
 

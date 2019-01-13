@@ -1,0 +1,28 @@
+.todoist__title {
+    color: var(--blue-light);
+    text-transform: uppercase;
+    font-size: var(--font-size-m);
+}
+
+.todoist__content {
+    font-size: var(--font-size-s);
+}
+
+.todoist__zero {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.todoist__zero img {
+    width: 100%;
+}
+
+.todoist__zero-quote,
+.todoist__zero-author {
+    font-size: var(--font-size-xxxs);
+    font-style: italic;
+}
+
+.todoist__zero-author {
+    text-align: right;
+}

@@ -69,7 +69,7 @@
             },
 
             fetchQuote() {
-                const endpoint = "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+                const endpoint = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
                 axios.get(endpoint).then(res => {
                     this.quote.content = this.strip(res.data[0].content);
                     this.quote.author = this.strip(res.data[0].title);

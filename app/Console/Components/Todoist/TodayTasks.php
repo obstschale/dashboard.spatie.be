@@ -43,6 +43,7 @@ class TodayTasks extends Command
                 return false;
             })
             ->sortBy('priority')
+            ->values()
             ->toArray();
 
         // Almut
@@ -68,6 +69,7 @@ class TodayTasks extends Command
                 return false;
             })
             ->sortBy('priority')
+            ->values()
             ->toArray();
 
          event(new TodayTasksFetched([

@@ -42,7 +42,7 @@ class TodayTasks extends Command
 
                 return false;
             })
-            ->sortBy('priority')
+            ->sortBy('priority', SORT_REGULAR, true)
             ->values()
             ->toArray();
 
@@ -68,7 +68,7 @@ class TodayTasks extends Command
 
                 return false;
             })
-            ->sortBy('priority')
+            ->sortBy('priority', SORT_REGULAR, true)
             ->values()
             ->toArray();
 

@@ -16,6 +16,7 @@ import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import Losung from './components/Losung';
+import Speedtest from './components/Speedtest';
 
 new Vue({
     el: '#dashboard',
@@ -34,6 +35,7 @@ new Vue({
         Twitter,
         Uptime,
         Losung,
+        Speedtest,
     },
 
     created() {

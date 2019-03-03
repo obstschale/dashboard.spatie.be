@@ -25,6 +25,11 @@ return [
 
     'open-weather-map' => [
         'api_key' => env('OPEN_WEATHER_MAP_API_KEY'),
+    ],
+
+    'speedtest-collector' => [
+        'api_key' => env('SPEEDTEST_COLLECTOR_TOKEN'),
+        'location' => env('SPEEDTEST_COLLECTOR_LOCATION'),
     ]
 
 ];

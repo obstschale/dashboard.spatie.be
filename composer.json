@@ -17,9 +17,11 @@
         "guzzlehttp/guzzle": "^6.2",
         "johngrogg/ics-parser": "^2.1",
         "knplabs/github-api": "^2.4",
+        "kylekatarnls/laravel-carbon-2": "^1.0.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "~1.0",
         "league/csv": "^9.1",
+        "nesbot/carbon": "2.14.2 as 1.34.0",
         "ohdearapp/laravel-ohdear-webhooks": "^1.0",
         "pda/pheanstalk": "^3.1",
         "php-http/guzzle6-adapter": "^1.1",
@@ -33,12 +35,14 @@
         "spatie/valuestore": "^1.1"
     },
     "require-dev": {
+        "deployer/deployer": "^6.4",
+        "deployer/recipes": "^6.2",
         "filp/whoops": "~2.0",
         "friendsofphp/php-cs-fixer": "^2.10",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "~7.0",
-        "nunomaduro/collision": "~2.0"
+        "nunomaduro/collision": "~2.0",
+        "phpunit/phpunit": "~7.0"
     },
     "autoload": {
         "classmap": [

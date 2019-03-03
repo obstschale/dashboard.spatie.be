@@ -1,0 +1,47 @@
+.speedtest__title {
+    color: var(--blue-light);
+    text-transform: uppercase;
+    font-size: var(--font-size-m);
+}
+
+.speedtest__last-test {
+    font-size: var(--font-size-s);
+    padding-bottom: 1.5vh;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-areas: "cloud upload" "cloud download" "date date";
+}
+
+.speedtest__icon {
+    grid-area: cloud;
+    background-color: white;
+    mask-image: url('/images/svg/cloud.svg');
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+.speedtest__upload {
+    grid-area: upload;
+}
+
+.speedtest__download {
+    grid-area: download;
+}
+
+.speedtest__date {
+    grid-area: date;
+    font-size: 50%;
+    text-align: right;
+    color: var(--gray);
+}
+
+.speedtest__download,
+.speedtest__upload {
+    text-align: center;
+}
+
+.speedtest__mbits {
+    font-size: var(--font-size-base);
+}

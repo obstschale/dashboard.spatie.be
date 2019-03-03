@@ -24,6 +24,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Components\Twitter\SendFakeTweet::class,
         \App\Console\Components\Todoist\TodayTasks::class,
         \App\Console\Components\Losung\FetchLosung::class,
+        \App\Console\Components\Speedtest\FetchSpeedtest::class,
         UpdateDashboard::class,
     ];
 

@@ -38,5 +38,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('dashboard:fetch-packagist-totals')->hourly();
         $schedule->command('dashboard:fetch-npm-totals')->hourly();
         $schedule->command('dashboard:fetch-losung')->everyMinute();
+        $schedule->command('dashboard:speedtest')->everyFiveMinutes();
     }
 }

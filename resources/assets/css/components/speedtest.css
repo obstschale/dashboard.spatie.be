@@ -45,3 +45,15 @@
 .speedtest__mbits {
     font-size: var(--font-size-base);
 }
+
+.speedtest__bad {
+    color: var(--red-light);
+}
+
+.speedtest__warning {
+    color: var(--yellow);
+}
+
+.speedtest__good {
+    color: var(--green);
+}

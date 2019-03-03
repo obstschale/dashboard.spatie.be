@@ -9,7 +9,7 @@
     padding-bottom: 1.5vh;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 2fr 2fr 1fr;
     grid-template-areas: "cloud upload" "cloud download" "date date";
     grid-gap: 0px 10px;
@@ -35,7 +35,7 @@
 
 .speedtest__date {
     grid-area: date;
-    font-size: 50%;
+    font-size: 65%;
     text-align: right;
     color: var(--gray);
 }
@@ -43,6 +43,7 @@
 .speedtest__download,
 .speedtest__upload {
     text-align: center;
+    font-size: var(--font-size-m);
 }
 
 .speedtest__mbits {

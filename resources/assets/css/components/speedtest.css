@@ -12,6 +12,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 2fr 1fr;
     grid-template-areas: "cloud upload" "cloud download" "date date";
+    grid-gap: 0px 10px;
 }
 
 .speedtest__icon {
@@ -24,10 +25,12 @@
 
 .speedtest__upload {
     grid-area: upload;
+    align-self: end;
 }
 
 .speedtest__download {
     grid-area: download;
+    align-self: start;
 }
 
 .speedtest__date {

@@ -5,7 +5,7 @@
                 <div class="speedtest__icon h-background-icon"></div>
                 <div class="speedtest__upload" v-bind:class="[uploadColor]">{{ speedtest.upload }} <span class="speedtest__mbits">Mbit/s</span></div>
                 <div class="speedtest__download" v-bind:class="[downloadColor]">{{ speedtest.download }} <span class="speedtest__mbits">Mbit/s</span></div>
-                <div class="speedtest__date">{{ speedtest.date }}</div>
+                <div class="speedtest__date">{{ speedtestDate }}</div>
             </div>
         </section>
     </tile>
@@ -15,6 +15,7 @@
 import echo from '../mixins/echo';
 import Tile from './atoms/Tile';
 import saveState from 'vue-save-state';
+import moment from 'moment';
 
 export default {
     components: {
@@ -36,6 +37,12 @@ export default {
     },
 
     computed: {
+        speedtestDate() {
+            return moment(this.speedtest.date)
+                .utcOffset(2)
+                .format('DD. MMMM YYYY HH:mm')
+        },
+
         uploadColor() {
             if (Number(this.speedtest.upload) >= 20) {
                 return 'speedtest__good'

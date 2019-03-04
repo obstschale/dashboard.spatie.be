@@ -34,7 +34,7 @@ class FetchSpeedtest extends Command
         event(new SpeedtestFetched([
             'upload'   => sprintf("%01.2f", ($speedtest->upload / 1024 / 1024)),
             'download' => sprintf("%01.2f", ($speedtest->download / 1024 / 1024)),
-            'date'     => (new Carbon($speedtest->created_at))->format('d. F. Y H:m'),
+            'date'     => $speedtest->created_at,
         ]));
     }
 }

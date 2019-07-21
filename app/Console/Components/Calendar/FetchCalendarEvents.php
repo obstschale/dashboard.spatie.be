@@ -14,7 +14,7 @@ class FetchCalendarEvents extends Command
 
     protected $signature = 'dashboard:fetch-calendar-events';
 
-    protected $description = 'Fetch events from a Google Calendar';
+    protected $description = 'Fetch events from a Private Calendar';
 
 
     public function handle()

@@ -21,6 +21,7 @@
     "stringz": "^0.2.1",
     "twemoji": "^2.5.1",
     "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
     "vue-save-state": "^1.1.0"
   },
   "devDependencies": {

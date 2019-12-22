@@ -22,7 +22,7 @@ class TodayTasks extends Command
         $users = config('services.todoist.users');
 
         $client = new Client([
-            'base_uri' => 'https://beta.todoist.com/API/v8/',
+            'base_uri' => 'https://api.todoist.com/rest/v1/',
             'headers'  => [
                 'Authorization' => "Bearer {$apiKeys[0]}",
                 'Accept'        => 'application/json'
@@ -49,7 +49,7 @@ class TodayTasks extends Command
         // Almut
 
         $client = new Client([
-            'base_uri' => 'https://beta.todoist.com/API/v8/',
+            'base_uri' => 'https://api.todoist.com/rest/v1/',
             'headers'  => [
                 'Authorization' => "Bearer {$apiKeys[1]}",
                 'Accept'        => 'application/json'

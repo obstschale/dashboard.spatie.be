@@ -31,7 +31,7 @@ host('travia')
     ->stage('production')
     ->configFile('~/.ssh/config')
     ->set('deploy_path', '~/html/{{application}}');
-    
+
 // Tasks
 
 task('build', function () {

@@ -18,5 +18,20 @@
 
 .calendar__event__date {
     font-size: var(--font-size-xxs);
-    color: var(--red-light);
+}
+
+.calendar__event__color__blue {
+    color: var(--blue-light);
+}
+
+.calendar__event__color__yellow {
+    color: var(--yellow);
+}
+
+.calendar__event__color__orange {
+    color: var(--orange);
+}
+
+.calendar__event__color__green {
+    color: var(--green);
 }

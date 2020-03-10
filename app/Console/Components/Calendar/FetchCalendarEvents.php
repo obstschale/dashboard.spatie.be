@@ -19,21 +19,27 @@ class FetchCalendarEvents extends Command
 
     public function handle()
     {
-        $ical = new ICal();
-        $ical->initUrl(config('calendars.ical'));
+        $events = collect(config('calendars.colors'))
+            ->combine(config('calendars.icals'))
+            ->map(static function (string $url, string $color) {
+                $ical = new ICal();
+                $ical->initUrl($url);
 
-        $events = collect($ical->events())
-            ->filter(function (Event $event) {
-                $date = new Carbon($event->dtend);
+                return collect($ical->events())
+                    ->map(static function (Event $event) use ($color) {
+                        return [
+                            'name'      => $event->summary,
+                            'startdate' => (new Carbon($event->dtstart))->format(DateTime::ATOM),
+                            'enddate'   => (new Carbon($event->dtend))->format(DateTime::ATOM),
+                            'color'     => $color,
+                        ];
+                    });
+            })
+            ->flatten(1)
+            ->filter(static function (array $event) {
+                $date = new Carbon($event['enddate']);
 
                 return $date > Carbon::now();
-            })
-            ->map(function (Event $event) {
-                return [
-                    'name'      => $event->summary,
-                    'startdate' => (new Carbon($event->dtstart))->format(DateTime::ATOM),
-                    'enddate'   => (new Carbon($event->dtend))->format(DateTime::ATOM),
-                ];
             })
             ->sortBy('startdate')
             ->values()

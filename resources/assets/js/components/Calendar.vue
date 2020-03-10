@@ -5,7 +5,7 @@
             <ul class="calendar__events">
                 <li v-for="event in events" class="calendar__event">
                     <h2 class="calendar__event__title">{{ event.name }}</h2>
-                    <div class="calendar__event__date">{{ formatDate(event.startdate, event.enddate) }}</div>
+                    <div class="calendar__event__date" :class="color(event.color)">{{ formatDate(event.startdate, event.enddate) }}</div>
                 </li>
             </ul>
         </section>
@@ -73,6 +73,10 @@ export default {
             return {
                 cacheKey: 'calendar',
             };
+        },
+
+        color(calendarColor) {
+            return `calendar__event__color__${calendarColor}`
         },
     },
 };

@@ -40,14 +40,26 @@ export default {
         formatDate(start, end) {
             const startDate = moment(start);
             const endDate = moment(end);
+            const time = startDate.format('HH:mm');
+            const dayEvent = moment(start).add(1, 'day').isSame(endDate);
 
             if (moment().isSame(startDate, 'd') ||
                 moment().isBetween(startDate, endDate)) {
-                return 'Heute';
+
+                if (dayEvent) {
+                    return 'Heute (ganztägig)';
+                }
+
+                return `Heute um ${time}`;
             }
 
             if (moment().add(1, 'day').isSame(startDate, 'd')) {
-                return 'Morgen';
+
+                if (dayEvent) {
+                    return 'Morgen (ganztägig)';
+                }
+
+                return `Morgen um ${time}`;
             }
 
             if (startDate.isBetween(moment().add(1, 'day'), moment().add(8, 'days'), 'day')) {

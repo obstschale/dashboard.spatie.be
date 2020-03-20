@@ -7,10 +7,7 @@
                     <li>All: {{ all.cases }}</li>
                     <li>Deaths: {{ all.deaths }}</li>
                     <li>Recovered: {{ all.recovered }}</li>
-                </ul>
-                <br>
-                <strong>Deutschland</strong>
-                <ul>
+                    <li><strong>Deutschland</strong></li>
                     <li>Cases: {{ germany.cases }}</li>
                     <li>Deaths: {{ germany.deaths }}</li>
                     <li>Recovered: {{ germany.recovered }}</li>

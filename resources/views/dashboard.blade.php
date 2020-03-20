@@ -11,7 +11,8 @@
     <speedtest position="d4"></speedtest>
     <time-weather position="b2:c2" time-format="HH:mm:ss" date-format="ddd DD. MMMM" time-zone="Europe/Berlin" weather-city="Augsburg"></time-weather>
     <tasks team-member="Fahrplan" position="d1"></tasks>
-    <music position="b1:c1"></music>
+    <corona position="b1"></corona>
+    <music position="c1"></music>
     <uptime position="c3"></uptime>
     <losung position="b3:c4"></losung>
     <internet-connection></internet-connection>

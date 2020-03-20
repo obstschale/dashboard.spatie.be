@@ -17,6 +17,7 @@ import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import Losung from './components/Losung';
 import Speedtest from './components/Speedtest';
+import Corona from './components/Corona';
 
 new Vue({
     el: '#dashboard',
@@ -36,6 +37,7 @@ new Vue({
         Uptime,
         Losung,
         Speedtest,
+        Corona
     },
 
     created() {

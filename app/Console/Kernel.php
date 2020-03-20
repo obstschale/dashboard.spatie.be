@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Components\Corona\FetchCoronaData;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -25,6 +26,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Components\Todoist\TodayTasks::class,
         \App\Console\Components\Losung\FetchLosung::class,
         \App\Console\Components\Speedtest\FetchSpeedtest::class,
+        FetchCoronaData::class,
         UpdateDashboard::class,
     ];
 
@@ -39,5 +41,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('dashboard:fetch-npm-totals')->hourly();
         $schedule->command('dashboard:fetch-losung')->everyMinute();
         $schedule->command('dashboard:speedtest')->everyFiveMinutes();
+        $schedule->command('dashboard:corona')->everyFifteenMinutes();
     }
 }

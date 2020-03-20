@@ -78,9 +78,6 @@
             "@php artisan package:discover"
         ],
         "deploy": [
-//            Run command on cli because of composers timeout limitation
-//            ./vendor/bin/dep deploy production
-//            "vendor/bin/dep deploy --ansi production"
             "echo 'Run on cli directly without composer'"
         ]
     },

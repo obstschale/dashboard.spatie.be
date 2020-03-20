@@ -78,7 +78,8 @@
             "@php artisan package:discover"
         ],
         "deploy": [
-            "echo 'Run on cli directly without composer'"
+            "echo 'Run on cli directly without composer'",
+            "echo run './vendor/bin/dep deploy production'"
         ]
     },
     "config": {

@@ -1,18 +1,25 @@
 <template>
     <tile :position="position" modifiers="transparent">
         <section class="corona">
-            <div class="corona__last-test">
-                <div class="corona__icon h-background-icon"></div>
-                <ul>
-                    <li>All: {{ all.cases }}</li>
-                    <li>Deaths: {{ all.deaths }}</li>
-                    <li>Recovered: {{ all.recovered }}</li>
-                    <li><strong>Deutschland</strong></li>
-                    <li>Cases: {{ germany.cases }}</li>
-                    <li>Deaths: {{ germany.deaths }}</li>
-                    <li>Recovered: {{ germany.recovered }}</li>
-                </ul>
-                <div class="corona__date">{{ coronaDate }}</div>
+            <h1 class="corona__title">Corona Daten</h1>
+            <div class="corona__data">
+                    <div class="corona__grid-all big-red">{{ formatNumber(all.cases) }}</div>
+                    <div class="corona__grid-all-deaths">
+                        <span>{{ formatNumber(all.deaths) }}</span>
+                    </div>
+                    <div class="corona__grid-all-recovered">
+                        <span>{{ formatNumber(all.recovered) }}</span>
+                    </div>
+
+                    <div class="corona__grid-germany-all big-red">{{ formatNumber(germany.cases) }}</div>
+                    <div class="corona__grid-germany-deaths">
+                        <span>{{ formatNumber(germany.deaths) }}</span>
+                    </div>
+                    <div class="corona__grid-germany-recovered">
+                        <span>{{ formatNumber(germany.recovered) }}</span>
+                    </div>
+
+                    <div class="corona__grid-date">{{ coronaDate }}</div>
             </div>
         </section>
     </tile>
@@ -64,6 +71,10 @@ export default {
     },
 
     methods: {
+        formatNumber(number) {
+            return (number).toLocaleString('de');
+        },
+
         getEventHandlers() {
             return {
                 'Corona.CoronaDataFetched': response => {
@@ -82,3 +93,94 @@ export default {
     },
 };
 </script>
+<style scoped>
+    .corona__title {
+        color: var(--blue-light);
+        text-transform: uppercase;
+        font-size: var(--font-size-m);
+    }
+
+    .corona__data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 2fr 2fr 5fr;
+        grid-template-areas:
+            "all gAll"
+            "allDeaths gDeaths"
+            "allRecovered gRecovered"
+            "date date";
+        grid-gap: 5px;
+    }
+
+    .big-red {
+        font-size: xx-large;
+        color: var(--red);
+        text-align: center;
+    }
+
+    .corona__grid-all,
+    .corona__grid-all-deaths,
+    .corona__grid-all-recovered {
+        text-align: left;
+    }
+
+    .corona__grid-germany-all,
+    .corona__grid-germany-deaths,
+    .corona__grid-germany-recovered {
+        text-align: right;
+    }
+
+    .corona__grid-all {
+        grid-area: all;
+    }
+
+    .corona__grid-all-deaths {
+        grid-area: allDeaths;
+    }
+
+    .corona__grid-all-recovered {
+        grid-area: allRecovered;
+    }
+
+    .corona__grid-all-deaths span,
+    .corona__grid-all-recovered span,
+    .corona__grid-germany-deaths span,
+    .corona__grid-germany-recovered span {
+        padding: 0 10px;
+        border: 2px solid;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+
+    .corona__grid-all-deaths span,
+    .corona__grid-germany-deaths span {
+        color: var(--red);
+        border-color: var(--red);
+    }
+
+    .corona__grid-all-recovered span,
+    .corona__grid-germany-recovered span {
+        color: var(--green);
+        border-color: var(--green);
+    }
+
+    .corona__grid-germany-all {
+        grid-area: gAll;
+    }
+
+    .corona__grid-germany-deaths {
+        grid-area: gDeaths;
+    }
+
+    .corona__grid-germany-recovered {
+        grid-area: gRecovered;
+    }
+
+    .corona__grid-date {
+        grid-area: date;
+        font-size: 65%;
+        align-self: end;
+        text-align: right;
+        color: var(--gray);
+    }
+</style>

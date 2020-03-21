@@ -103,7 +103,7 @@ export default {
     .corona__data {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3fr 2fr 2fr 5fr;
+        grid-template-rows: 3fr 2fr 2fr 2fr;
         grid-template-areas:
             "all gAll"
             "allDeaths gDeaths"

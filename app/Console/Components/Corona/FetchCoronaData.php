@@ -24,8 +24,8 @@ class FetchCoronaData extends Command
             ]
         ]);
 
-        $all = json_decode($client->get("all")->getBody());
-        $germany = json_decode($client->get('countries/germany')->getBody());
+        $all = json_decode($client->get("v2/all")->getBody());
+        $germany = json_decode($client->get('v2/countries/germany')->getBody());
 
         event(new CoronaDataFetched([
             'all'   => $all,

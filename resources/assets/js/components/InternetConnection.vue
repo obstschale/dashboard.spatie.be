@@ -36,6 +36,10 @@ export default {
             );
 
             this.offline = lastHeartBeatReceivedSecondsAgo > 125;
+
+            if (this.offline) {
+                setTimeout(() => location.reload(), 5000);
+            }
         },
 
         getEventHandlers() {

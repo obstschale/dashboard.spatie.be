@@ -35,3 +35,7 @@
 .calendar__event__color__green {
     color: var(--green);
 }
+
+.calendar__event__color__red {
+    color: var(--red-lighter);
+}

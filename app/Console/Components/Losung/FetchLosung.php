@@ -20,7 +20,7 @@ class FetchLosung extends Command
      */
     public function handle()
     {
-        $csv = Reader::createFromPath(storage_path('app/losung2020.csv'), 'r');
+        $csv = Reader::createFromPath(storage_path('app/losung-2021.csv'), 'r');
         $csv->setDelimiter("\t");
         $csv->setHeaderOffset(0); //set the CSV header offset
 
